@@ -1,4 +1,4 @@
-<livewire-widgets::widget class="ww-widget--statistic">
+<x-livewire-widgets::widget class="ww-widget--statistic">
 
     <p class="ww-widget__stat_title">{{ $title }}</p>
 
@@ -12,4 +12,4 @@
         <p class="ww-widget__statistic_description">{{ $description }}</p>
     @endif
 
-</livewire-widgets::widget>
+</x-livewire-widgets::widget>
