@@ -11,16 +11,6 @@ use function method_exists;
 abstract class Widget extends Component
 {
 
-    /**
-     * @var view-string
-     */
-    protected static string $view;
-
-    /**
-     * @var view-string
-     */
-    protected static string $placeholderView = 'livewire-widgets::skeletons.widget';
-
     public int|string $columnSpan = 1;
 
     public int|string $columnStart = 1;
@@ -31,6 +21,19 @@ abstract class Widget extends Component
     protected function getViewData(): array
     {
         return [];
+    }
+
+    /**
+     * @return view-string
+     */
+    abstract protected static function view(): string;
+
+    /**
+     * @return view-string
+     */
+    protected static function placeholderView(): string
+    {
+        return 'livewire-widgets::skeletons.widget';
     }
 
     protected function getBaseViewData(): array
@@ -50,7 +53,7 @@ abstract class Widget extends Component
 
     public function render(): View
     {
-        return view(static::$view, array_merge(
+        return view(static::view(), array_merge(
             $this->getBaseViewData(),
             $this->getViewData(),
         ));
@@ -68,6 +71,6 @@ abstract class Widget extends Component
 
     public function placeholder(): View
     {
-        return view(self::$placeholderView, $this->getPlaceholderData());
+        return view(static::placeholderView(), $this->getPlaceholderData());
     }
 }

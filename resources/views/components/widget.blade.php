@@ -1,3 +1,7 @@
+@props([
+    'title' => null,
+    'actions' => null,
+])
 <div {{ $attributes->class([
     'ww-widget',
 ]) }}>
@@ -7,7 +11,7 @@
         @endif
 
         @if(isset($actions))
-            <div>
+            <div class="ww-widget__actions">
                 {{ $actions ?? '' }}
             </div>
         @endif

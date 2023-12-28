@@ -35,6 +35,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
+        "bernskioldmedia/laravel-highcharts": "^0.1.0",
         "illuminate/contracts": "^10.0",
         "livewire/livewire": "^3.0"
     },

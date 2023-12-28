@@ -2,9 +2,12 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 
-use Bernskioldmedia\LaravelLivewireWidgets\Concerns;
+use BernskioldMedia\LaravelLivewireWidgets\Concerns;
+use Bernskioldmedia\LaravelLivewireWidgets\Contracts\ComparesValues;
 use Livewire\Attributes\Computed;
 use function __;
+use function array_merge;
+use function config;
 use function round;
 
 /**
@@ -13,24 +16,19 @@ use function round;
  * @property-read float|null $change
  * @property-read string|null $changeLabel
  */
-class StatisticWidget extends Widget
+abstract class StatisticWidget extends Widget
 {
     use Concerns\HasTitle,
         Concerns\HasDescription;
 
-    protected static string $view = 'livewire-widgets::statistic-widget';
-
     public bool $showChange = true;
 
-    protected function getValue(): int|float|null
+    protected static function view(): string
     {
-        return null;
+        return config('laravel-livewire-widgets.views.statistic-widget');
     }
 
-    protected function getPreviousValue(): int|float|null
-    {
-        return null;
-    }
+    abstract public function getValue(): int|float|null;
 
     #[Computed]
     public function value(): int|float|null
@@ -41,7 +39,7 @@ class StatisticWidget extends Widget
     #[Computed]
     public function previousValue(): int|float|null
     {
-        if (!$this->showChange) {
+        if (!$this->showChange || !$this instanceof ComparesValues) {
             return null;
         }
 
@@ -51,7 +49,7 @@ class StatisticWidget extends Widget
     #[Computed]
     public function change(): ?float
     {
-        if (!$this->showChange) {
+        if (!$this->showChange || !$this instanceof ComparesValues) {
             return null;
         }
 
@@ -70,11 +68,7 @@ class StatisticWidget extends Widget
     #[Computed]
     public function changeLabel(): ?string
     {
-        if ($this->showChange === false) {
-            return null;
-        }
-
-        if (!$this->change) {
+        if ($this->showChange === false || !$this instanceof ComparesValues || !$this->change) {
             return null;
         }
 
@@ -93,7 +87,18 @@ class StatisticWidget extends Widget
     {
         return array_merge(parent::getPlaceholderData(), [
             'hasChange' => $this->showChange,
+            'isComparisonEnabled' => $this instanceof ComparesValues,
         ]);
+    }
+
+    protected function getBaseViewData(): array
+    {
+        return array_merge(
+            parent::getBaseViewData(),
+            [
+                'isComparisonEnabled' => $this instanceof ComparesValues,
+            ]
+        );
     }
 
 }
