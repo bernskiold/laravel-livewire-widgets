@@ -13,6 +13,6 @@ abstract class ChartWidget extends Widget
 
     protected static function view(): string
     {
-        return config('laravel-livewire-widgets.views.chart-widget');
+        return config('livewire-widgets.livewire.views.chart-widget');
     }
 }

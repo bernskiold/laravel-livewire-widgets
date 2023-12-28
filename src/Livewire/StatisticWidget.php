@@ -25,7 +25,7 @@ abstract class StatisticWidget extends Widget
 
     protected static function view(): string
     {
-        return config('laravel-livewire-widgets.views.statistic-widget');
+        return config('livewire-widgets.livewire.views.statistic-widget');
     }
 
     abstract public function getValue(): int|float|null;
