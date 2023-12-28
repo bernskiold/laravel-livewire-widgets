@@ -1,8 +1,8 @@
 <?php
 
-namespace BernskioldMedia\LaravelLivewireWidgets;
+namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 
-use BernskioldMedia\LaravelLivewireWidgets\Concerns;
+use Bernskioldmedia\LaravelLivewireWidgets\Concerns;
 
 class ChartWidget extends Widget
 {

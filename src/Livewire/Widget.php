@@ -1,6 +1,6 @@
 <?php
 
-namespace BernskioldMedia\LaravelLivewireWidgets;
+namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 
 use Illuminate\View\View;
 use Livewire\Attributes\Lazy;
