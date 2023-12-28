@@ -28,6 +28,11 @@ abstract class StatisticWidget extends Widget
         return config('livewire-widgets.livewire.views.statistic-widget');
     }
 
+    protected static function placeholderView(): string
+    {
+        return config('livewire-widgets.livewire.skeletons.statistic-widget');
+    }
+
     abstract public function getValue(): int|float|null;
 
     #[Computed]

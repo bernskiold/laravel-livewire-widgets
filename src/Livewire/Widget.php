@@ -5,9 +5,9 @@ namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 use Illuminate\View\View;
 use Livewire\Attributes\Lazy;
 use Livewire\Component;
+use function config;
 use function method_exists;
 
-#[Lazy]
 abstract class Widget extends Component
 {
 
@@ -33,7 +33,7 @@ abstract class Widget extends Component
      */
     protected static function placeholderView(): string
     {
-        return 'livewire-widgets::skeletons.widget';
+        return config('livewire-widgets.livewire.skeletons.base');
     }
 
     protected function getBaseViewData(): array

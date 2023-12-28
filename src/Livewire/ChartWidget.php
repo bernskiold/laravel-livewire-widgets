@@ -15,4 +15,9 @@ abstract class ChartWidget extends Widget
     {
         return config('livewire-widgets.livewire.views.chart-widget');
     }
+
+    protected static function placeholderView(): string
+    {
+        return config('livewire-widgets.livewire.skeletons.chart-widget');
+    }
 }
