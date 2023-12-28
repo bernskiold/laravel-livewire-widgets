@@ -41,11 +41,11 @@ abstract class Widget extends Component
         $data = [];
 
         if (method_exists($this, 'getTitle')) {
-            $data['title'] = $this->showTitle ? $this->getTitle() : null;
+            $data['widgetTitle'] = $this->showTitle ? $this->getTitle() : null;
         }
 
         if (method_exists($this, 'getDescription')) {
-            $data['description'] = $this->showDescription ? $this->getDescription() : null;
+            $data['widgetDescription'] = $this->showDescription ? $this->getDescription() : null;
         }
 
         return $data;
