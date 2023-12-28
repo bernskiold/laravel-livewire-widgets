@@ -2,6 +2,7 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets;
 
+use BernskioldMedia\LaravelLivewireWidgets\Livewire\ChartWidget;
 use BernskioldMedia\LaravelLivewireWidgets\Livewire\StatisticWidget;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
@@ -13,6 +14,9 @@ class LaravelLivewireWidgetsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         AboutCommand::add('Laravel Livewire Widgets', fn() => ['Version' => '1.0.0']);
+
+        Livewire::component('chart-widget', ChartWidget::class);
+        Livewire::component('statistic-widget', StatisticWidget::class);
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-widgets');
 
