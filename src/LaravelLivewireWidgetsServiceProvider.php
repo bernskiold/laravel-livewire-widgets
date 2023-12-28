@@ -19,8 +19,9 @@ class LaravelLivewireWidgetsServiceProvider extends ServiceProvider
         AboutCommand::add('Laravel Livewire Widgets', fn() => ['Version' => '1.0.0']);
 
         Blade::component('livewire-widgets::widget', Widget::class);
-        Livewire::component('livewire-widgets::chart-widget', ChartWidget::class);
         Livewire::component('livewire-widgets::statistic-widget', StatisticWidget::class);
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-widgets');
 
         $this->publishes([
             __DIR__ . '/../config/livewire-widgets.php' => config_path('livewire-widgets.php'),
