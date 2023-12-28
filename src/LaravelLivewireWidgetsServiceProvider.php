@@ -2,6 +2,9 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets;
 
+use BernskioldMedia\LaravelLivewireWidgets\Components\Widget;
+use BernskioldMedia\LaravelLivewireWidgets\Livewire\ChartWidget;
+use BernskioldMedia\LaravelLivewireWidgets\Livewire\StatisticWidget;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -15,18 +18,19 @@ class LaravelLivewireWidgetsServiceProvider extends ServiceProvider
 
         AboutCommand::add('Laravel Livewire Widgets', fn() => ['Version' => '1.0.0']);
 
-        Blade::component('livewire-widgets::widget', \BernskioldMedia\LaravelLivewireWidgets\Components\Widget::class);
+        Blade::component('livewire-widgets::widget', Widget::class);
+        Livewire::component('livewire-widgets::chart-widget', ChartWidget::class);
+        Livewire::component('livewire-widgets::statistic-widget', StatisticWidget::class);
 
-//        $this->publishes([
-//            __DIR__ . '/../config/highcharts.php' => config_path('highcharts.php'),
-//        ]);
+        $this->publishes([
+            __DIR__ . '/../config/livewire-widgets.php' => config_path('livewire-widgets.php'),
+        ]);
     }
 
     public function register(): void
     {
-//        $this->mergeConfigFrom(
-//            __DIR__ . '/../config/highcharts.php', 'highcharts'
-//        );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/livewire-widgets.php', 'livewire-widgets'
+        );
     }
-
 }
