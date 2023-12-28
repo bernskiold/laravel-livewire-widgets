@@ -1,0 +1,69 @@
+{
+    "name": "bernskioldmedia/laravel-livewire-widgets",
+    "description": "A framework for adding self-contained Livewire-powered widgets to your application.",
+    "keywords": [
+        "bernskioldmedia",
+        "laravel",
+        "livewire",
+        "widgets"
+    ],
+    "homepage": "https://github.com/bernskioldmedia/laravel-livewire-widgets",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BernskioldMedia\\LaravelLivewireWidgets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BernskioldMedia\\LaravelLivewireWidgets\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bernskiold Media",
+            "email": "hello@bernskioldmedia.com",
+            "role": "Agency"
+        },
+        {
+            "name": "Erik Bernskiold",
+            "email": "erik@bernskioldmedia.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^10.0",
+        "livewire/livewire": "^3.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.0",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^v2.2.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BernskioldMedia\\LaravelLivewireWidgets\\LaravelLivewireWidgetsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    }
+}
