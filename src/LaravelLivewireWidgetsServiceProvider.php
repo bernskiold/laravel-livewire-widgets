@@ -2,11 +2,8 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets;
 
-use BernskioldMedia\LaravelLivewireWidgets\Livewire\ChartWidget;
-use BernskioldMedia\LaravelLivewireWidgets\Livewire\StatisticWidget;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 
 class LaravelLivewireWidgetsServiceProvider extends ServiceProvider
 {
