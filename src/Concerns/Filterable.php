@@ -7,12 +7,12 @@ trait Filterable
 
     public array $filters = [];
 
-    protected function forcedFilters(): array
+    public function forcedFilters(): array
     {
         return [];
     }
 
-    protected function defaultFilters(): array
+    public function defaultFilters(): array
     {
         return [];
     }
