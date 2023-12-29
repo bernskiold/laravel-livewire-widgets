@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bernskioldmedia/laravel-livewire-widgets.svg?style=flat-square)](https://packagist.org/packages/bernskioldmedia/laravel-livewire-widgets)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/bernskioldmedia/laravel-livewire-widgets/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/bernskioldmedia/laravel-livewire-widgets/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/bernskioldmedia/laravel-livewire-widgets/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/bernskioldmedia/laravel-livewire-widgets/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/bernskioldmedia/laravel-livewire-widgets.svg?style=flat-square)](https://packagist.org/packages/bernskioldmedia/laravel-livewire-widgets)
 
 ## Installation
