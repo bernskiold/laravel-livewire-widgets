@@ -15,6 +15,6 @@ interface SupportsFiltering
 
     public function hasFilter(string $key): bool;
 
-    public function getFilter(string $key): mixed;
+    public function getFilter(string $key, mixed $default = null): mixed;
 
 }

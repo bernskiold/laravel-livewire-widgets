@@ -46,8 +46,8 @@ trait Filterable
         return isset($this->filters[$key]);
     }
 
-    public function getFilter(string $key): mixed
+    public function getFilter(string $key, mixed $default = null): mixed
     {
-        return $this->filters[$key] ?? null;
+        return $this->filters[$key] ?? $default;
     }
 }
