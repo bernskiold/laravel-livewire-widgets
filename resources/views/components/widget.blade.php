@@ -1,6 +1,6 @@
 @php
-    use Bernskioldmedia\LaravelLivewireWidgets\Enums\WidgetHeights;
-    use Bernskioldmedia\LaravelLivewireWidgets\Enums\WidgetWidths;
+    use BernskioldMedia\LaravelLivewireWidgets\Enums\WidgetHeights;
+    use BernskioldMedia\LaravelLivewireWidgets\Enums\WidgetWidths;
 @endphp
 @props([
     'title' => null,
