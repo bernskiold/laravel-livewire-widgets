@@ -11,7 +11,7 @@
             @if($this->changeDirection === 'positive')
                 <x-livewire-widgets::icons.trending-up class="ww-widget__stat-change-icon"/>
             @elseif($this->changeDirection === 'negative')
-                <x-livewire-widgets::icons.trending-down class="ww-widget__stat_change_icon"/>
+                <x-livewire-widgets::icons.trending-down class="ww-widget__stat-change-icon"/>
             @endif
             <span>{{ number_format($this->change, 1) }}{{ $this->getChangeValueSuffix() }}</span>
         </p>
