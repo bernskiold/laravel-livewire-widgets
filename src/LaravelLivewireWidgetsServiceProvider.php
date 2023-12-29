@@ -16,11 +16,11 @@ class LaravelLivewireWidgetsServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../config/livewire-widgets.php' => config_path('livewire-widgets.php'),
-        ], 'livewire-widgets-config');
+        ], 'laravel-livewire-widgets-config');
 
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/livewire-widgets'),
-        ], 'livewire-widgets-views');
+        ], 'laravel-livewire-widgets-views');
     }
 
     public function register(): void
