@@ -14,7 +14,7 @@ trait HasTitle
         return '';
     }
 
-    protected function getTitle(): string
+    public function getTitle(): string
     {
         if ($this->title) {
             return $this->title;

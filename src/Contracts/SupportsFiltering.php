@@ -9,9 +9,9 @@ interface SupportsFiltering
 
     public function resetFilters(): void;
 
-    public function setFilter(string $key, $value): void;
+    public function setFilter(string $key, $value): self;
 
-    public function removeFilter(string $key): void;
+    public function removeFilter(string $key): self;
 
     public function hasFilter(string $key): bool;
 

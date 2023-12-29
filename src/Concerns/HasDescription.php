@@ -14,9 +14,9 @@ trait HasDescription
         return '';
     }
 
-    protected function getDescription(): string
+    public function getDescription(): string
     {
-        if ($this->description) {
+        if (!empty($this->description)) {
             return $this->description;
         }
 
