@@ -1,6 +1,6 @@
 <?php
 
-namespace Bernskioldmedia\LaravelLivewireWidgets\Enums;
+namespace BernskioldMedia\LaravelLivewireWidgets\Enums;
 
 enum WidgetWidths: string
 {
