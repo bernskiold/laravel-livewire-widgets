@@ -1,6 +1,6 @@
 <?php
 
-namespace Bernskioldmedia\LaravelLivewireWidgets\Contracts;
+namespace BernskioldMedia\LaravelLivewireWidgets\Contracts;
 
 interface ComparesValues
 {

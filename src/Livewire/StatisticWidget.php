@@ -3,7 +3,7 @@
 namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 
 use BernskioldMedia\LaravelLivewireWidgets\Concerns;
-use Bernskioldmedia\LaravelLivewireWidgets\Contracts\ComparesValues;
+use BernskioldMedia\LaravelLivewireWidgets\Contracts\ComparesValues;
 use Livewire\Attributes\Computed;
 use function __;
 use function array_merge;
@@ -22,6 +22,10 @@ abstract class StatisticWidget extends Widget
         Concerns\HasDescription;
 
     public bool $showChange = true;
+
+    public bool $invertedChange = false;
+
+    public bool $changeAsPercentage = true;
 
     protected static function view(): string
     {
@@ -62,30 +66,34 @@ abstract class StatisticWidget extends Widget
             return null;
         }
 
-        return ($this->value - $this->previousValue) / $this->previousValue * 100;
+        if ($this->changeAsPercentage) {
+            return ($this->value - $this->previousValue) / $this->previousValue * 100;
+        }
+
+        return $this->value - $this->previousValue;
     }
 
-    protected function getChangeValueSuffix(): string
+    public function getChangeValueSuffix(): string
     {
         return '%';
     }
 
     #[Computed]
-    public function changeLabel(): ?string
+    public function changeDirection(): ?string
     {
         if ($this->showChange === false || !$this instanceof ComparesValues || !$this->change) {
             return null;
         }
 
         if ($this->change > 0) {
-            return __(':percentage increase', ['percentage' => round($this->change, 2) . $this->getChangeValueSuffix()]);
+            return $this->invertedChange ? 'negative' : 'positive';
         }
 
         if ($this->change < 0) {
-            return __(':percentage decrease', ['percentage' => round($this->change, 2) . $this->getChangeValueSuffix()]);
+            return $this->invertedChange ? 'positive' : 'negative';
         }
 
-        return __('No change');
+        return 'neutral';
     }
 
     protected function getPlaceholderData(): array
