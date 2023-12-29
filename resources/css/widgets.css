@@ -1,0 +1,61 @@
+.ww-widgets {
+    @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12;
+    gap: var(--ww-widgets-gap, 1.5rem);
+}
+
+.ww-widget {
+    @apply bg-white flex flex-col;
+}
+
+.ww-widget--width-1\/4 {
+    @apply col-span-1 lg:col-span-3;
+}
+
+.ww-widget--width-1\/2 {
+    @apply col-span-1 md:col-span-2 lg:col-span-6;
+}
+
+.ww-widget--width-3\/4 {
+    @apply col-span-1 md:col-span-3 lg:col-span-9;
+}
+
+.ww-widget--width-1\/1 {
+    @apply col-span-1;
+}
+
+.ww-widget--width-1\/3 {
+    @apply col-span-1 md:col-span-2 lg:col-span-4;
+}
+
+.ww-widget--width-2\/3 {
+    @apply col-span-1 md:col-span-2 lg:col-span-8;
+}
+
+.ww-widget--height-1 {
+    @apply row-span-1;
+}
+
+.ww-widget--height-2 {
+    @apply row-span-2;
+}
+
+.ww-widget--height-3 {
+    @apply row-span-3;
+}
+
+.ww-widget--height-4 {
+    @apply row-span-4;
+}
+
+.ww-widget__header {
+    @apply flex items-center justify-between gap-4;
+    padding: var(--ww-widget-padding, 1.5rem);
+}
+
+.ww-widget__title {
+    @apply text-lg font-semibold;
+}
+
+.ww-widget__body {
+    padding: 0 var(--ww-widget-padding, 1.5rem) var(--ww-widget-padding, 1.5rem) var(--ww-widget-padding, 1.5rem);
+}

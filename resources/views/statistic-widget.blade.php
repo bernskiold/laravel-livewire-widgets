@@ -1,4 +1,6 @@
-<x-livewire-widgets::widget class="ww-widget--statistic">
+<x-livewire-widgets::widget class="ww-widget--statistic"
+                            :width="$width"
+                            :height="$height">
 
     <p class="ww-widget__stat_title">{{ $widgetTitle }}</p>
 

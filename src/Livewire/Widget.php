@@ -2,8 +2,9 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 
+use Bernskioldmedia\LaravelLivewireWidgets\Enums\WidgetHeights;
+use Bernskioldmedia\LaravelLivewireWidgets\Enums\WidgetWidths;
 use Illuminate\View\View;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use function config;
 use function method_exists;
@@ -11,9 +12,9 @@ use function method_exists;
 abstract class Widget extends Component
 {
 
-    public int|string $columnSpan = 1;
+    public string $width = WidgetWidths::Fourth->value;
 
-    public int|string $columnStart = 1;
+    public string $height = WidgetHeights::One->value;
 
     /**
      * @return array<string, mixed>
@@ -62,8 +63,8 @@ abstract class Widget extends Component
     protected function getPlaceholderData(): array
     {
         return [
-            'columnSpan' => $this->columnSpan,
-            'columnStart' => $this->columnStart,
+            'width' => $this->width,
+            'height' => $this->height,
             'hasTitle' => method_exists($this, 'getTitle') && $this->showTitle,
             'hasDescription' => method_exists($this, 'getDescription') && $this->showDescription,
         ];
