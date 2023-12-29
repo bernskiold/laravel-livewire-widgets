@@ -2,7 +2,7 @@
 
 namespace BernskioldMedia\LaravelLivewireWidgets\Concerns;
 
-trait SupportsFiltering
+trait Filterable
 {
 
     public array $filters = [];
