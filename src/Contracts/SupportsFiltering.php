@@ -4,7 +4,6 @@ namespace BernskioldMedia\LaravelLivewireWidgets\Contracts;
 
 interface SupportsFiltering
 {
-
     public function getFilters(): array;
 
     public function resetFilters(): void;
@@ -16,5 +15,4 @@ interface SupportsFiltering
     public function hasFilter(string $key): bool;
 
     public function getFilter(string $key, mixed $default = null): mixed;
-
 }

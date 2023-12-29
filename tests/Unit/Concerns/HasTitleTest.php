@@ -3,7 +3,8 @@
 use BernskioldMedia\LaravelLivewireWidgets\Concerns\HasTitle;
 
 beforeEach(function () {
-    $this->testClass = new class {
+    $this->testClass = new class
+    {
         use HasTitle;
     };
 });
@@ -29,7 +30,8 @@ it('can set title visibility', function () {
 });
 
 it('can get a default title', function () {
-    $class = new class {
+    $class = new class
+    {
         use HasTitle;
 
         protected function defaultTitle(): string
@@ -42,7 +44,8 @@ it('can get a default title', function () {
 });
 
 it('can get a custom title', function () {
-    $class = new class {
+    $class = new class
+    {
         use HasTitle;
 
         protected function defaultTitle(): string

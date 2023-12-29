@@ -4,7 +4,6 @@ namespace BernskioldMedia\LaravelLivewireWidgets\Concerns;
 
 trait HasTitle
 {
-
     public ?string $title = null;
 
     public bool $showTitle = true;
@@ -22,5 +21,4 @@ trait HasTitle
 
         return $this->defaultTitle();
     }
-
 }

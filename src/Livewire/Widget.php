@@ -6,12 +6,12 @@ use BernskioldMedia\LaravelLivewireWidgets\Enums\WidgetHeights;
 use BernskioldMedia\LaravelLivewireWidgets\Enums\WidgetWidths;
 use Illuminate\View\View;
 use Livewire\Component;
+
 use function config;
 use function method_exists;
 
 abstract class Widget extends Component
 {
-
     public string $width = WidgetWidths::Fourth->value;
 
     public string $height = WidgetHeights::One->value;

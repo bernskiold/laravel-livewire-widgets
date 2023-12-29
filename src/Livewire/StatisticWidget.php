@@ -5,10 +5,9 @@ namespace BernskioldMedia\LaravelLivewireWidgets\Livewire;
 use BernskioldMedia\LaravelLivewireWidgets\Concerns;
 use BernskioldMedia\LaravelLivewireWidgets\Contracts\ComparesValues;
 use Livewire\Attributes\Computed;
-use function __;
+
 use function array_merge;
 use function config;
-use function round;
 
 /**
  * @property-read int|float|null $value
@@ -18,8 +17,8 @@ use function round;
  */
 abstract class StatisticWidget extends Widget
 {
-    use Concerns\HasTitle,
-        Concerns\HasDescription;
+    use Concerns\HasDescription,
+        Concerns\HasTitle;
 
     public bool $showChange = true;
 
@@ -48,7 +47,7 @@ abstract class StatisticWidget extends Widget
     #[Computed]
     public function previousValue(): int|float|null
     {
-        if (!$this->showChange || !$this instanceof ComparesValues) {
+        if (! $this->showChange || ! $this instanceof ComparesValues) {
             return null;
         }
 
@@ -58,7 +57,7 @@ abstract class StatisticWidget extends Widget
     #[Computed]
     public function change(): ?float
     {
-        if (!$this->showChange || !$this instanceof ComparesValues) {
+        if (! $this->showChange || ! $this instanceof ComparesValues) {
             return null;
         }
 
@@ -81,7 +80,7 @@ abstract class StatisticWidget extends Widget
     #[Computed]
     public function changeDirection(): ?string
     {
-        if ($this->showChange === false || !$this instanceof ComparesValues || !$this->change) {
+        if ($this->showChange === false || ! $this instanceof ComparesValues || ! $this->change) {
             return null;
         }
 
@@ -113,5 +112,4 @@ abstract class StatisticWidget extends Widget
             ]
         );
     }
-
 }

@@ -4,7 +4,6 @@ namespace BernskioldMedia\LaravelLivewireWidgets\Concerns;
 
 trait Filterable
 {
-
     public array $filters = [];
 
     public function forcedFilters(): array

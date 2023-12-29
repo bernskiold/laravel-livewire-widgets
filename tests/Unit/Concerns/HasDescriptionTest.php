@@ -3,7 +3,8 @@
 use BernskioldMedia\LaravelLivewireWidgets\Concerns\HasDescription;
 
 beforeEach(function () {
-    $this->testClass = new class {
+    $this->testClass = new class
+    {
         use HasDescription;
     };
 });
@@ -29,7 +30,8 @@ it('can set description visibility', function () {
 });
 
 it('can get a default description', function () {
-    $class = new class {
+    $class = new class
+    {
         use HasDescription;
 
         protected function defaultDescription(): string
@@ -42,7 +44,8 @@ it('can get a default description', function () {
 });
 
 it('can get a custom description', function () {
-    $class = new class {
+    $class = new class
+    {
         use HasDescription;
 
         protected function defaultDescription(): string

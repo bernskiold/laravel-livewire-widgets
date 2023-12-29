@@ -3,7 +3,8 @@
 use BernskioldMedia\LaravelLivewireWidgets\Concerns\Filterable;
 
 beforeEach(function () {
-    $this->testClass = new class {
+    $this->testClass = new class
+    {
         use Filterable;
     };
 });
@@ -65,7 +66,8 @@ it('can remove a filter', function () {
 });
 
 it('can get all filters with default and forced', function () {
-    $class = new class {
+    $class = new class
+    {
         use Filterable;
 
         public function forcedFilters(): array
@@ -92,7 +94,8 @@ it('can get all filters with default and forced', function () {
 });
 
 it('overrides default filters with set filter', function () {
-    $class = new class {
+    $class = new class
+    {
         use Filterable;
 
         public function defaultFilters(): array
@@ -109,7 +112,8 @@ it('overrides default filters with set filter', function () {
 });
 
 it('overrides any default or set filter with forced filters', function () {
-    $class = new class {
+    $class = new class
+    {
         use Filterable;
 
         public function forcedFilters(): array

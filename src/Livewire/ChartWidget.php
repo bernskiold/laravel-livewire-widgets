@@ -7,8 +7,8 @@ use BernskioldMedia\LaravelLivewireWidgets\Concerns;
 
 abstract class ChartWidget extends Widget
 {
-    use Concerns\HasTitle,
-        Concerns\HasDescription,
+    use Concerns\HasDescription,
+        Concerns\HasTitle,
         InteractsWithCharts;
 
     protected static function view(): string
