@@ -13,18 +13,31 @@
     'ww-widget--width-'.$width,
     'ww-widget--height-'.$height,
 ]) }}>
-    <div class="ww-widget__header">
-        @if(!empty($title))
-            <h2 class="ww-widget__title">{{ $title }}</h2>
-        @endif
 
-        @if(isset($actions))
-            <div class="ww-widget__actions">
-                {{ $actions ?? '' }}
-            </div>
-        @endif
-    </div>
-    <div class="ww-widget__body">
-        {{ $slot }}
-    </div>
+    @if(!empty($title) || isset($actions))
+        <div class="ww-widget__header">
+            @if(!empty($title))
+                <h2 class="ww-widget__title">{{ $title }}</h2>
+            @endif
+
+            @if(isset($actions))
+                <div {{ $actions->attributes->class(['ww-widget__actions']) }}>
+                    {{ $actions ?? '' }}
+                </div>
+            @endif
+        </div>
+    @endif
+
+    @if(isset($slot))
+        <div class="ww-widget__body">
+            {{ $slot }}
+        </div>
+    @endif
+
+    @if(isset($footer))
+        <div {{ $footer->attributes->class(['ww-widget_footer']) }}>
+            {{ $footer }}
+        </div>
+    @endif
+
 </div>

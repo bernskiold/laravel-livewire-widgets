@@ -75,7 +75,7 @@ abstract class StatisticWidget extends Widget
 
     public function getChangeValueSuffix(): string
     {
-        return '%';
+        return $this->changeAsPercentage ? '%' : '';
     }
 
     #[Computed]
