@@ -34,17 +34,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.2|^8.3",
-        "bernskioldmedia/laravel-highcharts": "^0.1.0|^0.2.0",
-        "illuminate/contracts": "^10.0|^11.0",
+        "php": "^8.2|^8.3|^8.4",
+        "bernskioldmedia/laravel-highcharts": "^0.1.0|^0.2.0|^0.3.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
         "livewire/livewire": "^3.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.0|^8.0",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-laravel": "^v2.2.0"
+        "nunomaduro/collision": "^7.0|^8.0|^9.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.2.0|^3.0"
     },
     "config": {
         "sort-packages": true,
