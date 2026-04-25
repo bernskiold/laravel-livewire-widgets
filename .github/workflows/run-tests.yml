@@ -10,16 +10,18 @@ jobs:
       fail-fast: true
       matrix:
         php: [ 8.2, 8.3, 8.4 ]
-        # Laravel 13 is omitted from CI until bernskioldmedia/laravel-highcharts
-        # ships a 0.4.x release with L13 support; the composer.json constraint
-        # already pre-allows ^0.4.0 so it'll resolve cleanly once published.
-        laravel: [ 11.*, 12.* ]
+        laravel: [ 11.*, 12.*, 13.* ]
         dependency-version: [ prefer-stable ]
         include:
           - laravel: 11.*
             testbench: 9.*
           - laravel: 12.*
             testbench: 10.*
+          - laravel: 13.*
+            testbench: 11.*
+        exclude:
+          - laravel: 13.*
+            php: 8.2
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
